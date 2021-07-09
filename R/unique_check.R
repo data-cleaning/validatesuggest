@@ -7,7 +7,7 @@ all_unique({{{name}}})
 
 #' Suggest range checks
 #' @export
-#' @inheritParams suggest_type_check
+#' @rdname suggest_unique_check
 write_unique_check <- function(d, vars=names(d), file=stdout(), fraction=0.95){
 
   vars <- lapply(vars, function(name){
@@ -26,6 +26,8 @@ write_unique_check <- function(d, vars=names(d), file=stdout(), fraction=0.95){
 
 #' @export
 #' @inheritParams suggest_type_check
+#' @param fraction if values in a column > `fraction` unique,
+#' the check will be generated.
 suggest_unique_check <- function(d, vars = names(d), fraction=0.95){
   tf <- tempfile()
   write_unique_check(d, vars, fraction=0.95, file = tf)

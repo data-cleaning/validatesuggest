@@ -12,7 +12,7 @@ write_ratio_check <- function(d, vars=names(d), file=stdout(), lin_cor=0.95){
   vars <- Filter(function(v){
     is.numeric(d[[v]])
   }, vars)
-  cd <- cor(d[vars], d[vars], "pairwise.complete.obs")
+  cd <- stats::cor(d[vars], d[vars], "pairwise.complete.obs")
   cdl <- which(abs(cd) >= lin_cor, arr.ind = TRUE)
   cdl <- cdl[cdl[,1] < cdl[,2],]
   cdl <- matrix(vars[cdl], ncol=2)

@@ -8,6 +8,13 @@
 \description{
 What the package does (one paragraph).
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://edwindj.github.io/validatesuggest}
+}
+
+}
 \author{
 \strong{Maintainer}: Edwin de Jonge \email{edwindjonge@gmail.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
 

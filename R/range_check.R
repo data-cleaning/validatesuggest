@@ -23,9 +23,8 @@ in_range({{{name}}}, {{min}}, {{max}})
 {{/vars}}
 "
 
-#' Suggest range checks
 #' @export
-#' @inheritParams suggest_type_check
+#' @rdname suggest_range_check
 write_range_check <- function(d, vars=names(d), min=TRUE, max=FALSE, file=stdout()){
   vars <- lapply(vars, function(name){
     x <- d[[name]]
@@ -62,8 +61,12 @@ write_range_check <- function(d, vars=names(d), min=TRUE, max=FALSE, file=stdout
     writeLines(file)
 }
 
+#' Suggest a range check
+#'
 #' @export
 #' @inheritParams suggest_type_check
+#' @param min `TRUE` or `FALSE`, should the minimum value be checked?
+#' @param max `TRUE` or `FALSE`, should the maximum value be checked?
 suggest_range_check <- function(d, vars = names(d), min=TRUE, max=FALSE){
   tf <- tempfile()
   write_range_check(d, vars, min=min, max=max, file = tf)
