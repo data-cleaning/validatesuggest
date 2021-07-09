@@ -6,8 +6,8 @@ Authors@R:
            family = "de Jonge",
            role = c("aut", "cre"),
            email = "edwindjonge@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           comment = c(ORCID="0000-0002-6580-4718"))
+Description: Generate Suggestions for Validation Rules
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -17,3 +17,4 @@ Imports:
     validate,
     whisker
 URL: https://edwindj.github.io/validatesuggest
+BugReports: https://edwindj.github.io/validatesuggest/issues
