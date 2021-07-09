@@ -57,8 +57,10 @@ write_range_check <- function(d, vars=names(d), min=TRUE, max=FALSE, file=stdout
           )
     }
   })
-  whisker::whisker.render(RANGE_CHECK, data = list(vars=vars)) |>
-    writeLines(file)
+  writeLines(
+    whisker::whisker.render(RANGE_CHECK, data = list(vars=vars)),
+    file
+  )
 }
 
 #' Suggest a range check

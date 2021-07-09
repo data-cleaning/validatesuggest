@@ -20,8 +20,10 @@ write_unique_check <- function(d, vars=names(d), file=stdout(), fraction=0.95){
     }
   })
   vars <- Filter(function(v){!is.null(v)}, vars)
-  whisker::whisker.render(UNIQUE_CHECK, data = list(vars=vars)) |>
-    writeLines(file)
+  writeLines(
+    whisker::whisker.render(UNIQUE_CHECK, data = list(vars=vars)),
+    file
+  )
 }
 
 #' @export

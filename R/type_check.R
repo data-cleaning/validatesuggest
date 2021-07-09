@@ -13,8 +13,10 @@ write_type_check <- function(d, vars=names(d), file=stdout()){
     x <- d[[name]]
     list(name = name, type = class(x)[1])
   })
-  whisker::whisker.render(TYPE_CHECK, data = list(vars=vars)) |>
-    writeLines(file)
+  writeLines(
+    whisker::whisker.render(TYPE_CHECK, data = list(vars=vars)),
+    file
+  )
 }
 
 #' suggest type check
