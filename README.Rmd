@@ -33,7 +33,23 @@ devtools::install_github("edwindj/validatesuggest")
 ## Example
 
 ```{r example}
+library(validate)
 library(validatesuggest)
-## basic example code
+
+data(retailers, package="validate")
+data(SBS2000, package="validate")
+
+# does all
+#suggest_rules(retailers)
+
+
+suggest_range_check(retailers)
+
+suggest_na_check(retailers)
+
+suggest_unique_check(SBS2000)
+
+suggest_type_check(retailers)
 ```
+
 

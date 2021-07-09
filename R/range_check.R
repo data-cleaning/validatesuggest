@@ -46,6 +46,7 @@ write_range_check <- function(d, vars=names(d), file=stdout()){
     writeLines(file)
 }
 
+#' @export
 suggest_range_check <- function(d, vars = names(d)){
   tf <- tempfile()
   write_range_check(d, vars, file = tf)

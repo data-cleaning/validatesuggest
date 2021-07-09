@@ -21,6 +21,7 @@ write_na_check <- function(d, vars=names(d), file=stdout()){
     writeLines(file)
 }
 
+#' @export
 suggest_na_check <- function(d, vars = names(d)){
   tf <- tempfile()
   write_na_check(d, vars = vars, file = tf)

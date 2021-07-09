@@ -16,6 +16,7 @@ write_type_check <- function(d, vars=names(d), file=stdout()){
     writeLines(file)
 }
 
+#' @export
 suggest_type_check <- function(d, vars = names(d)){
   tf <- tempfile()
   write_type_check(d, vars = vars, file = tf)
