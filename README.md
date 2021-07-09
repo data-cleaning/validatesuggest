@@ -9,8 +9,10 @@
 status](https://www.r-pkg.org/badges/version/validatesuggest)](https://CRAN.R-project.org/package=validatesuggest)
 <!-- badges: end -->
 
-The goal of validatesuggest is to generate suggestions for validation
-rules specified with `validate`.
+The goal of validatesuggest is to generate suggestions for
+[validation](https://CRAN.R-project.org/package=validate) rules from a
+supplied dataset. These can be used as a starting point for a rule set
+and are to be adjusted by domain experts.
 
 ## Installation
 
