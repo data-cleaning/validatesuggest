@@ -25,6 +25,7 @@ write_na_check <- function(d, vars=names(d), file=stdout()){
 #'
 #' Suggest an check for completeness.
 #' @export
+#' @example example/na_check.R
 #' @inheritParams suggest_type_check
 suggest_na_check <- function(d, vars = names(d)){
   tf <- tempfile()

@@ -42,6 +42,7 @@ ratio_check <- function(d, var1, var2){
 #'
 #' Suggest ratio checks
 #' @export
+#' @example example/ratio_check.R
 #' @inheritParams suggest_type_check
 #' @param lin_cor threshold for abs correlation to be included (details)
 suggest_ratio_check <- function(d, vars = names(d), lin_cor=0.95){

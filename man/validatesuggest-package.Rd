@@ -6,17 +6,20 @@
 \alias{validatesuggest-package}
 \title{validatesuggest: Generate Suggestions for Validation Rules}
 \description{
-What the package does (one paragraph).
+Generate suggestions for validation rules from a reference
+   data set, which can be used as a starting point for domain specific 
+   rules.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://edwindj.github.io/validatesuggest}
+  \item Report bugs at \url{https://edwindj.github.io/validatesuggest/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Edwin de Jonge \email{edwindjonge@gmail.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Edwin de Jonge \email{edwindjonge@gmail.com} (\href{https://orcid.org/0000-0002-6580-4718}{ORCID})
 
 }
 \keyword{internal}

@@ -65,6 +65,7 @@ write_range_check <- function(d, vars=names(d), min=TRUE, max=FALSE, file=stdout
 #'
 #' @export
 #' @inheritParams suggest_type_check
+#' @example example/range_check.R
 #' @param min `TRUE` or `FALSE`, should the minimum value be checked?
 #' @param max `TRUE` or `FALSE`, should the maximum value be checked?
 suggest_range_check <- function(d, vars = names(d), min=TRUE, max=FALSE){

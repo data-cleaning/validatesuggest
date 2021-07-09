@@ -19,3 +19,10 @@ suggest_na_check(d, vars = names(d))
 \description{
 Suggest an check for completeness.
 }
+\examples{
+data(retailers, package="validate")
+
+# will generate check for all columns in retailers that are
+# complete.
+suggest_na_check(retailers)
+}

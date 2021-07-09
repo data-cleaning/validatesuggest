@@ -7,7 +7,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "edwindjonge@gmail.com",
            comment = c(ORCID="0000-0002-6580-4718"))
-Description: Generate Suggestions for Validation Rules
+Description: Generate suggestions for validation rules from a reference
+   data set, which can be used as a starting point for domain specific 
+   rules.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
