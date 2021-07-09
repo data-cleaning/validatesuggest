@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/index.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/reference/suggest_type_check.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/reference/validatesuggest-package.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/reference/write_na_check.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/reference/write_range_check.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/reference/write_ratio_check.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/reference/write_unique_check.html</loc>
+  </url>
+</urlset>
