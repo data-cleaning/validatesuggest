@@ -87,7 +87,7 @@
 <span class="co">#suggest_rules(retailers)</span>
 
 
-<span class="fu">suggest_range_check</span><span class="op">(</span><span class="va">retailers</span>, min<span class="op">=</span><span class="cn">TRUE</span>, max<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu"><a href="reference/write_range_check.html">suggest_range_check</a></span><span class="op">(</span><span class="va">retailers</span>, min<span class="op">=</span><span class="cn">TRUE</span>, max<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; Object of class 'validator' with 10 elements:</span>
 <span class="co">#&gt;  RC1 : size %in% c("sc0", "sc3", "sc1", "sc2")</span>
 <span class="co">#&gt;  RC2 : incl.prob &gt;= 0.02</span>
@@ -100,12 +100,12 @@
 <span class="co">#&gt;  RC9 : profit &gt;= -222</span>
 <span class="co">#&gt;  RC10: vat &gt;= 41</span>
 
-<span class="fu">suggest_na_check</span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
+<span class="fu"><a href="reference/write_na_check.html">suggest_na_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
 <span class="co">#&gt; Object of class 'validator' with 2 elements:</span>
 <span class="co">#&gt;  NA1: is.complete(size)</span>
 <span class="co">#&gt;  NA2: is.complete(incl.prob)</span>
 
-<span class="fu">suggest_unique_check</span><span class="op">(</span><span class="va">SBS2000</span><span class="op">)</span>
+<span class="fu"><a href="reference/write_unique_check.html">suggest_unique_check</a></span><span class="op">(</span><span class="va">SBS2000</span><span class="op">)</span>
 <span class="co">#&gt; Object of class 'validator' with 1 elements:</span>
 <span class="co">#&gt;  UN1: all_unique(id)</span>
 
@@ -122,7 +122,7 @@
 <span class="co">#&gt;  TC9 : is.integer(profit)</span>
 <span class="co">#&gt;  TC10: is.integer(vat)</span>
 
-<span class="fu">suggest_ratio_check</span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
+<span class="fu"><a href="reference/write_ratio_check.html">suggest_ratio_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
 <span class="co">#&gt; Object of class 'validator' with 10 elements:</span>
 <span class="co">#&gt;  RC1 : turnover &gt;= 0 * total.rev</span>
 <span class="co">#&gt;  RC2 : turnover &lt;= 9.07 * total.rev</span>

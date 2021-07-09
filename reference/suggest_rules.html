@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • validatesuggest</title>
+<title>Suggest rules — suggest_rules • validatesuggest</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Suggest rules — suggest_rules" />
+<meta property="og:description" content="Suggests rules using the various suggestion checks.
+Use the more specific suggest functions for more control." />
 
 
 
@@ -58,7 +60,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -100,72 +102,63 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Suggest rules</h1>
+    
+    <div class="hidden name"><code>suggest_rules.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Suggests rules using the various suggestion checks.
+Use the more specific <code>suggest</code> functions for more control.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>suggest_rules</span><span class='op'>(</span>
+  <span class='va'>d</span>,
+  vars <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>d</span><span class='op'>)</span>,
+  range_check <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  type_check <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  na_check <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  unique_check <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  ratio_check <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="suggest_na_check.html">write_na_check()</a></code> <code><a href="suggest_na_check.html">suggest_na_check()</a></code> </p>
-        </td>
-        <td><p>Suggest an check for completeness.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="suggest_range_check.html">write_range_check()</a></code> <code><a href="suggest_range_check.html">suggest_range_check()</a></code> </p>
-        </td>
-        <td><p>Suggest a range check</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="suggest_ratio_check.html">write_ratio_check()</a></code> <code><a href="suggest_ratio_check.html">suggest_ratio_check()</a></code> </p>
-        </td>
-        <td><p>Suggest ratio checks</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="suggest_rules.html">suggest_rules()</a></code> </p>
-        </td>
-        <td><p>Suggest rules</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="suggest_type_check.html">write_type_check()</a></code> <code><a href="suggest_type_check.html">suggest_type_check()</a></code> </p>
-        </td>
-        <td><p>suggest type check</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="suggest_unique_check.html">write_unique_check()</a></code> <code><a href="suggest_unique_check.html">suggest_unique_check()</a></code> </p>
-        </td>
-        <td><p>Suggest range checks</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>d</th>
+      <td><p><code>data.frame</code>, used to generate the checks</p></td>
+    </tr>
+    <tr>
+      <th>vars</th>
+      <td><p><code>character</code> optionally the subset of variables to be used.</p></td>
+    </tr>
+    <tr>
+      <th>range_check</th>
+      <td><p>if <code>TRUE</code> include range_check</p></td>
+    </tr>
+    <tr>
+      <th>type_check</th>
+      <td><p>if <code>TRUE</code> include type_check</p></td>
+    </tr>
+    <tr>
+      <th>na_check</th>
+      <td><p>if <code>TRUE</code> include na_check</p></td>
+    </tr>
+    <tr>
+      <th>unique_check</th>
+      <td><p>if <code>TRUE</code> include unique_check</p></td>
+    </tr>
+    <tr>
+      <th>ratio_check</th>
+      <td><p>if <code>TRUE</code> include ratio_check</p></td>
+    </tr>
     </table>
-  </div>
 
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
