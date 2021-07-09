@@ -18,5 +18,5 @@ RoxygenNote: 7.1.1
 Imports: 
     validate,
     whisker
-URL: https://edwindj.github.io/validatesuggest
-BugReports: https://edwindj.github.io/validatesuggest/issues
+URL: https://github.com/edwindj/validatesuggest
+BugReports: https://github.com/edwindj/validatesuggest/issues
