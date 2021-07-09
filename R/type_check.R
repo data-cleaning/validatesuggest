@@ -5,8 +5,9 @@ is.{{{type}}}({{{name}}})
 {{/vars}}
 "
 
-#' suggest type check
 #' @export
+#' @rdname suggest_type_check
+#' @param file file to which the checks will be written to.
 write_type_check <- function(d, vars=names(d), file=stdout()){
   vars <- lapply(vars, function(name){
     x <- d[[name]]
@@ -16,7 +17,10 @@ write_type_check <- function(d, vars=names(d), file=stdout()){
     writeLines(file)
 }
 
+#' suggest type check
 #' @export
+#' @param d `data.frame`, used to generate the checks
+#' @param vars `character` optionally the subset of variables to be used.
 suggest_type_check <- function(d, vars = names(d)){
   tf <- tempfile()
   write_type_check(d, vars = vars, file = tf)

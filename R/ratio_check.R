@@ -6,8 +6,8 @@ RATIO_CHECK <-
 {{/pairs}}
 "
 
-#' Suggest ratio checks
 #' @export
+#' @rdname suggest_ratio_check
 write_ratio_check <- function(d, vars=names(d), file=stdout(), lin_cor=0.95){
   vars <- Filter(function(v){
     is.numeric(d[[v]])
@@ -38,10 +38,15 @@ ratio_check <- function(d, var1, var2){
 # write_ratio_check(retailers)
 # write_ratio_check(SBS2000)
 
+#' Suggest ratio checks
+#'
+#' Suggest ratio checks
 #' @export
-suggest_ratio_check <- function(d, vars = names(d)){
+#' @inheritParams suggest_type_check
+#' @param lin_cor threshold for abs correlation to be included (details)
+suggest_ratio_check <- function(d, vars = names(d), lin_cor=0.95){
   tf <- tempfile()
-  write_ratio_check(d, vars, file = tf)
+  write_ratio_check(d, vars, lin_cor = lin_cor, file = tf)
   rules <- validate::validator(.file = tf)
   validate::description(rules) <-
     sprintf("ratio check")

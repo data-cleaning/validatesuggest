@@ -6,6 +6,13 @@
 \usage{
 write_unique_check(d, vars = names(d), file = stdout(), fraction = 0.95)
 }
+\arguments{
+\item{d}{\code{data.frame}, used to generate the checks}
+
+\item{vars}{\code{character} optionally the subset of variables to be used.}
+
+\item{file}{file to which the checks will be written to.}
+}
 \description{
 Suggest range checks
 }

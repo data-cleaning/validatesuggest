@@ -36,18 +36,18 @@ data(SBS2000, package="validate")
 #suggest_rules(retailers)
 
 
-suggest_range_check(retailers)
+suggest_range_check(retailers, min=TRUE, max=FALSE)
 #> Object of class 'validator' with 10 elements:
 #>  RC1 : size %in% c("sc0", "sc3", "sc1", "sc2")
-#>  RC2 : in_range(incl.prob, 0.02, 0.14)
-#>  RC3 : in_range(staff, 1, 75)
-#>  RC4 : in_range(turnover, 1, 931397)
-#>  RC5 : in_range(other.rev, -33, 98350)
-#>  RC6 : in_range(total.rev, 25, 931397)
-#>  RC7 : in_range(staff.costs, 2, 221302)
-#>  RC8 : in_range(total.costs, 22, 2725410)
-#>  RC9 : in_range(profit, -222, 225493)
-#>  RC10: in_range(vat, 41, 9655)
+#>  RC2 : incl.prob >= 0.02
+#>  RC3 : staff >= 1
+#>  RC4 : turnover >= 1
+#>  RC5 : other.rev >= -33
+#>  RC6 : total.rev >= 25
+#>  RC7 : staff.costs >= 2
+#>  RC8 : total.costs >= 22
+#>  RC9 : profit >= -222
+#>  RC10: vat >= 41
 
 suggest_na_check(retailers)
 #> Object of class 'validator' with 2 elements:

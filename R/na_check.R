@@ -7,6 +7,7 @@ is.complete({{{name}}})
 
 #' suggest na check
 #' @export
+#' @inheritParams suggest_type_check
 write_na_check <- function(d, vars=names(d), file=stdout()){
   # only columns that are complete in d or use a fraction?
   vars <- Filter(function(name){
@@ -22,6 +23,7 @@ write_na_check <- function(d, vars=names(d), file=stdout()){
 }
 
 #' @export
+#' @inheritParams suggest_type_check
 suggest_na_check <- function(d, vars = names(d)){
   tf <- tempfile()
   write_na_check(d, vars = vars, file = tf)
