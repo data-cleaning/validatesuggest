@@ -1,3 +1,8 @@
 ^validatesuggest\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^README\.Rmd$
+^example$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
