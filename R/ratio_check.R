@@ -1,29 +1,20 @@
-RANGE_CHECK <-
+RATIO_CHECK <-
 "# check the range of variables
 {{#vars}}
-{{#isnumeric}}
-in_range({{{name}}}, {{min}}, {{max}})
-{{/isnumeric}}
-{{#islogical}}
-{{{name}}} %in% c(TRUE, FALSE)
-{{/islogical}}
-{{#ischaracter}}
-{{{name}}} %in% {{{values}}}
-{{/ischaracter}}
 {{/vars}}
 "
 
 #' Suggest range checks
 #' @export
-write_range_check <- function(d, vars=names(d), file=stdout()){
+write_ratio_check <- function(d, vars=names(d), file=stdout()){
   vars <- lapply(vars, function(name){
     x <- d[[name]]
     if (is.numeric(x)){
       list( name = name
-          , isnumeric=TRUE
-          , min=min(x, na.rm = TRUE)
-          , max=max(x, na.rm = TRUE)
-          )
+            , isnumeric=TRUE
+            , min=min(x, na.rm = TRUE)
+            , max=max(x, na.rm = TRUE)
+      )
     } else if (is.logical(x)){
       list(name = name, islogical=TRUE)
     } else {
@@ -32,30 +23,30 @@ write_range_check <- function(d, vars=names(d), file=stdout()){
       values <- unique(x)
       if (length(values) == length(x)){
         warning("Skipped range check '",name,"'", ", as it is unique for each record"
-               , call. = FALSE
-               )
+                , call. = FALSE
+        )
         return(NULL)
       }
       list( name = name
-          , ischaracter = TRUE
-          , values = deparse(values)
-          )
+            , ischaracter = TRUE
+            , values = deparse(values)
+      )
     }
   })
-  whisker::whisker.render(RANGE_CHECK, data = list(vars=vars)) |>
+  whisker::whisker.render(RATIO_CHECK, data = list(vars=vars)) |>
     writeLines(file)
 }
 
-suggest_range_check <- function(d, vars = names(d)){
+suggest_ratio_check <- function(d, vars = names(d)){
   tf <- tempfile()
-  write_range_check(d, vars, file = tf)
+  write_ratio_check(d, vars, file = tf)
   rules <- validate::validator(.file = tf)
   validate::description(rules) <-
-    sprintf("range check")
+    sprintf("ratio check")
   validate::origin(rules) <-
     sprintf("validatesuggest %s"
-           , packageVersion("validatesuggest")
-           )
+            , packageVersion("validatesuggest")
+    )
   names(rules) <- paste0("RC", seq_len(length(rules)))
   rules
 }
