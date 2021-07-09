@@ -1,14 +1,14 @@
 NA_CHECK <-
 "# check the type of variables
 {{#vars}}
-!is.na({{{name}}})
+is.complete({{{name}}})
 {{/vars}}
 "
 
 #' suggest na check
 #' @export
 write_na_check <- function(d, vars=names(d), file=stdout()){
-  # only columns that are complete in d?
+  # only columns that are complete in d or use a fraction?
   vars <- Filter(function(name){
     !anyNA(d[[name]])
   }, vars)

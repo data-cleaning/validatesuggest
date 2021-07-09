@@ -49,8 +49,8 @@ suggest_range_check(retailers)
 
 suggest_na_check(retailers)
 #> Object of class 'validator' with 2 elements:
-#>  NA1: !is.na(size)
-#>  NA2: !is.na(incl.prob)
+#>  NA1: is.complete(size)
+#>  NA2: is.complete(incl.prob)
 
 suggest_unique_check(SBS2000)
 #> Object of class 'validator' with 1 elements:
