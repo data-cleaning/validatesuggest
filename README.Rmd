@@ -50,6 +50,8 @@ suggest_na_check(retailers)
 suggest_unique_check(SBS2000)
 
 suggest_type_check(retailers)
+
+suggest_ratio_check(retailers)
 ```
 
 

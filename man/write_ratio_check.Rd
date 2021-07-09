@@ -2,10 +2,10 @@
 % Please edit documentation in R/ratio_check.R
 \name{write_ratio_check}
 \alias{write_ratio_check}
-\title{Suggest range checks}
+\title{Suggest ratio checks}
 \usage{
-write_ratio_check(d, vars = names(d), file = stdout())
+write_ratio_check(d, vars = names(d), file = stdout(), lin_cor = 0.95)
 }
 \description{
-Suggest range checks
+Suggest ratio checks
 }

@@ -1,42 +1,44 @@
 RATIO_CHECK <-
-"# check the range of variables
-{{#vars}}
-{{/vars}}
+"# check the ratio of highly correlated variables
+{{#pairs}}
+{{{var1}}} >= {{min}} * {{{var2}}}
+{{{var1}}} <= {{max}} * {{{var2}}}
+{{/pairs}}
 "
 
-#' Suggest range checks
+#' Suggest ratio checks
 #' @export
-write_ratio_check <- function(d, vars=names(d), file=stdout()){
-  vars <- lapply(vars, function(name){
-    x <- d[[name]]
-    if (is.numeric(x)){
-      list( name = name
-            , isnumeric=TRUE
-            , min=min(x, na.rm = TRUE)
-            , max=max(x, na.rm = TRUE)
-      )
-    } else if (is.logical(x)){
-      list(name = name, islogical=TRUE)
-    } else {
-      #TODO date and so on
-      x <- as.character(x)
-      values <- unique(x)
-      if (length(values) == length(x)){
-        warning("Skipped range check '",name,"'", ", as it is unique for each record"
-                , call. = FALSE
-        )
-        return(NULL)
-      }
-      list( name = name
-            , ischaracter = TRUE
-            , values = deparse(values)
-      )
-    }
+write_ratio_check <- function(d, vars=names(d), file=stdout(), lin_cor=0.95){
+  vars <- Filter(function(v){
+    is.numeric(d[[v]])
+  }, vars)
+  cd <- cor(d[vars], d[vars], "pairwise.complete.obs")
+  cdl <- which(abs(cd) >= lin_cor, arr.ind = TRUE)
+  cdl <- cdl[cdl[,1] < cdl[,2],]
+  cdl <- matrix(vars[cdl], ncol=2)
+  pairs <- lapply(seq_len(nrow(cdl)), function(r){
+    ratio_check(d, cdl[r,1], cdl[r,2])
   })
-  whisker::whisker.render(RATIO_CHECK, data = list(vars=vars)) |>
+  pairs
+  whisker::whisker.render(RATIO_CHECK, data = list(pairs=pairs)) |>
     writeLines(file)
 }
 
+ratio_check <- function(d, var1, var2){
+  ratio <- d[[var1]]/d[[var2]]
+  ratio <- ratio[is.finite(ratio)] # remove all NA, divide by zero ***
+  list( var1 = var1
+      , var2 = var2
+      , min = round(min(ratio),2)
+      , max = round(max(ratio),2)
+      )
+}
+
+
+# write_ratio_check(retailers)
+# write_ratio_check(SBS2000)
+
+#' @export
 suggest_ratio_check <- function(d, vars = names(d)){
   tf <- tempfile()
   write_ratio_check(d, vars, file = tf)
