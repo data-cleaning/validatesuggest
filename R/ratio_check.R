@@ -20,8 +20,10 @@ write_ratio_check <- function(d, vars=names(d), file=stdout(), lin_cor=0.95){
     ratio_check(d, cdl[r,1], cdl[r,2])
   })
   pairs
-  whisker::whisker.render(RATIO_CHECK, data = list(pairs=pairs)) |>
-    writeLines(file)
+  writeLines(
+    whisker::whisker.render(RATIO_CHECK, data = list(pairs=pairs)),
+    file
+  )
 }
 
 ratio_check <- function(d, var1, var2){
