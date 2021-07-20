@@ -117,9 +117,15 @@
     <p>Suggest ratio checks</p>
     </div>
 
-    <pre class="usage"><span class='fu'>write_ratio_check</span><span class='op'>(</span><span class='va'>d</span>, vars <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>d</span><span class='op'>)</span>, file <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/showConnections.html'>stdout</a></span><span class='op'>(</span><span class='op'>)</span>, lin_cor <span class='op'>=</span> <span class='fl'>0.95</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>write_ratio_check</span><span class='op'>(</span>
+  <span class='va'>d</span>,
+  vars <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>d</span><span class='op'>)</span>,
+  file <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/showConnections.html'>stdout</a></span><span class='op'>(</span><span class='op'>)</span>,
+  lin_cor <span class='op'>=</span> <span class='fl'>0.95</span>,
+  digits <span class='op'>=</span> <span class='fl'>2</span>
+<span class='op'>)</span>
 
-<span class='fu'>suggest_ratio_check</span><span class='op'>(</span><span class='va'>d</span>, vars <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>d</span><span class='op'>)</span>, lin_cor <span class='op'>=</span> <span class='fl'>0.95</span><span class='op'>)</span></pre>
+<span class='fu'>suggest_ratio_check</span><span class='op'>(</span><span class='va'>d</span>, vars <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>d</span><span class='op'>)</span>, lin_cor <span class='op'>=</span> <span class='fl'>0.95</span>, digits <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -139,6 +145,10 @@
     <tr>
       <th>lin_cor</th>
       <td><p>threshold for abs correlation to be included (details)</p></td>
+    </tr>
+    <tr>
+      <th>digits</th>
+      <td><p>number of digits for rounding</p></td>
     </tr>
     </table>
 
