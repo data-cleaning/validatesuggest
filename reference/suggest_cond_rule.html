@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Suggest a conditional rule — suggest_cond_rule • validatesuggest</title>
+<title>Suggest a conditional rule — write_cond_rule • validatesuggest</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Suggest a conditional rule — suggest_cond_rule" />
+<meta property="og:title" content="Suggest a conditional rule — write_cond_rule" />
 <meta property="og:description" content="Suggest a conditional rule based on a association rule.
 This functions derives conditional rules based on the non-existance
 of combinations of categories in pairs of variables.
@@ -125,7 +125,9 @@ For each numerical variable a logical variable is derived that tests for
 positivity.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>suggest_cond_rule</span><span class='op'>(</span><span class='va'>d</span>, vars <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>d</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>write_cond_rule</span><span class='op'>(</span><span class='va'>d</span>, vars <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>d</span><span class='op'>)</span>, file <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/showConnections.html'>stdout</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='fu'>suggest_cond_rule</span><span class='op'>(</span><span class='va'>d</span>, vars <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>d</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -137,6 +139,10 @@ positivity.</p>
     <tr>
       <th>vars</th>
       <td><p><code>character</code> optionally the subset of variables to be used.</p></td>
+    </tr>
+    <tr>
+      <th>file</th>
+      <td><p>file to which the checks will be written to.</p></td>
     </tr>
     </table>
 
@@ -161,7 +167,7 @@ positivity.</p>
 #&gt;  label      :  
 #&gt;  description: conditional rule 
 #&gt;  origin     : validatesuggest 0.0.0.9000 
-#&gt;  created    : 2021-07-20 09:36:24
+#&gt;  created    : 2021-07-20 09:40:16
 #&gt;  meta       : language&lt;chr&gt;, severity&lt;chr&gt;
 #&gt; [[2]]
 #&gt; 
@@ -171,7 +177,7 @@ positivity.</p>
 #&gt;  label      :  
 #&gt;  description: conditional rule 
 #&gt;  origin     : validatesuggest 0.0.0.9000 
-#&gt;  created    : 2021-07-20 09:36:24
+#&gt;  created    : 2021-07-20 09:40:16
 #&gt;  meta       : language&lt;chr&gt;, severity&lt;chr&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
