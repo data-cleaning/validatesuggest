@@ -1,0 +1,99 @@
+COND_CHECK <-
+"
+# Conditional checks
+{{#pairs}}
+if ({{{cond}}}) {{{cons}}}
+{{/pairs}}
+"
+derive_arule <- function(vars, d, fraction=0, debug = FALSE){
+  tab <- table(d[vars])
+
+  if (debug){
+    print(tab)
+  }
+
+  # strict checking, TODO relax this restriction with fraction
+  i <- which(tab == 0, arr.ind = TRUE)
+
+  rn <- rownames(tab)
+  cn <- colnames(tab)
+  lapply(seq_len(nrow(i)), function(r){
+    list( cond = atomic_check_expr( name = vars[1]
+                     , value = rn[i[r,1]]
+                     , is_logical = is.logical(d[[vars[1]]])
+                     , negate = FALSE
+                     ),
+          cons = atomic_check_expr( name = vars[2]
+                     , value = cn[i[r,2]]
+                     , is_logical = is.logical(d[[vars[2]]])
+                     , negate = TRUE
+                     )
+        )
+  })
+}
+
+POS_CHECK <- "^\\.pos\\."
+
+atomic_check_expr <- function(name, value, is_logical = FALSE, negate=FALSE){
+  if (is_logical){
+    value <- as.logical(value)
+  }
+  v <- as.symbol(name)
+  expr <- if (negate){
+    if (is.logical(value)){
+      value <- !value
+      bquote(.(v) == .(value))
+    } else {
+      bquote(.(v) != .(value))
+    }
+  } else {
+    bquote(.(v) == .(value))
+  }
+  if (isTRUE(grepl(POS_CHECK, name)) && is.logical(value)){
+    # note: negating value is done in line 44
+      v <- as.symbol(sub(POS_CHECK, "", name))
+      expr <- if (value) bquote(.(v) > 0) else bquote(.(v) <= 0)
+  }
+  deparse(expr)
+}
+
+write_cond_rule <- function(d, vars=names(d), file = stdout()){
+  is_numeric <- sapply(d[vars], is.numeric)
+  for (v in vars[is_numeric]){
+    vc <- paste0(".pos.", v)
+    d[[vc]] <- d[[v]] > 0
+    vars <- c(vars, vc)
+  }
+  vars <- Filter(function(v){
+    is.logical(d[[v]])
+    # !is.numeric(d[[v]])
+  }, vars)
+  pairs <- do.call(c, combn(vars, 2, derive_arule, d = d, simplify = FALSE))
+  writeLines(
+    whisker::whisker.render(COND_CHECK, data = list(pairs=pairs)),
+    file
+  )
+}
+
+
+#' Suggest a check for completeness.
+#'
+#' Suggest a check for completeness.
+#' @export
+#' @example example/na_check.R
+#' @importFrom utils combn
+#' @inheritParams suggest_type_check
+suggest_cond_rule <- function(d, vars = names(d)){
+  tf <- tempfile()
+  write_cond_rule(d, vars = vars, file = tf)
+
+  rules <- validate::validator(.file=tf)
+  validate::description(rules) <-
+    sprintf("conditional rule")
+  validate::origin(rules) <-
+    sprintf("validatesuggest %s"
+            , packageVersion("validatesuggest")
+    )
+  names(rules) <- paste0("CR", seq_len(length(rules)))
+  rules
+}

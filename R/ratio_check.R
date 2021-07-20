@@ -8,7 +8,7 @@ RATIO_CHECK <-
 
 #' @export
 #' @rdname suggest_ratio_check
-write_ratio_check <- function(d, vars=names(d), file=stdout(), lin_cor=0.95){
+write_ratio_check <- function(d, vars=names(d), file=stdout(), lin_cor=0.95, digits=2){
   vars <- Filter(function(v){
     is.numeric(d[[v]])
   }, vars)
@@ -17,7 +17,7 @@ write_ratio_check <- function(d, vars=names(d), file=stdout(), lin_cor=0.95){
   cdl <- cdl[cdl[,1] < cdl[,2],]
   cdl <- matrix(vars[cdl], ncol=2)
   pairs <- lapply(seq_len(nrow(cdl)), function(r){
-    ratio_check(d, cdl[r,1], cdl[r,2])
+    ratio_check(d, cdl[r,1], cdl[r,2], digits = digits)
   })
   pairs
   writeLines(
@@ -26,13 +26,13 @@ write_ratio_check <- function(d, vars=names(d), file=stdout(), lin_cor=0.95){
   )
 }
 
-ratio_check <- function(d, var1, var2){
+ratio_check <- function(d, var1, var2, digits = 2){
   ratio <- d[[var1]]/d[[var2]]
   ratio <- ratio[is.finite(ratio)] # remove all NA, divide by zero ***
   list( var1 = var1
       , var2 = var2
-      , min = round(min(ratio),2)
-      , max = round(max(ratio),2)
+      , min = round(min(ratio), digits = digits)
+      , max = round(max(ratio), digits = digits)
       )
 }
 
@@ -47,9 +47,10 @@ ratio_check <- function(d, var1, var2){
 #' @example example/ratio_check.R
 #' @inheritParams suggest_type_check
 #' @param lin_cor threshold for abs correlation to be included (details)
-suggest_ratio_check <- function(d, vars = names(d), lin_cor=0.95){
+#' @param digits number of digits for rounding
+suggest_ratio_check <- function(d, vars = names(d), lin_cor=0.95, digits=2){
   tf <- tempfile()
-  write_ratio_check(d, vars, lin_cor = lin_cor, file = tf)
+  write_ratio_check(d, vars, lin_cor = lin_cor, file = tf, digits = digits)
   rules <- validate::validator(.file = tf)
   validate::description(rules) <-
     sprintf("ratio check")

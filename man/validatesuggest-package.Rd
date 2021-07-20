@@ -13,8 +13,8 @@ Generate suggestions for validation rules from a reference
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://edwindj.github.io/validatesuggest}
-  \item Report bugs at \url{https://edwindj.github.io/validatesuggest/issues}
+  \item \url{https://github.com/edwindj/validatesuggest}
+  \item Report bugs at \url{https://github.com/edwindj/validatesuggest/issues}
 }
 
 }

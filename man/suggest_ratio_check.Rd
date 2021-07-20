@@ -5,9 +5,15 @@
 \alias{suggest_ratio_check}
 \title{Suggest ratio checks}
 \usage{
-write_ratio_check(d, vars = names(d), file = stdout(), lin_cor = 0.95)
+write_ratio_check(
+  d,
+  vars = names(d),
+  file = stdout(),
+  lin_cor = 0.95,
+  digits = 2
+)
 
-suggest_ratio_check(d, vars = names(d), lin_cor = 0.95)
+suggest_ratio_check(d, vars = names(d), lin_cor = 0.95, digits = 2)
 }
 \arguments{
 \item{d}{\code{data.frame}, used to generate the checks}
@@ -17,6 +23,8 @@ suggest_ratio_check(d, vars = names(d), lin_cor = 0.95)
 \item{file}{file to which the checks will be written to.}
 
 \item{lin_cor}{threshold for abs correlation to be included (details)}
+
+\item{digits}{number of digits for rounding}
 }
 \description{
 Suggest ratio checks

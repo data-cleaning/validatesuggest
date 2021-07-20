@@ -20,3 +20,6 @@ Imports:
     whisker
 URL: https://github.com/edwindj/validatesuggest
 BugReports: https://github.com/edwindj/validatesuggest/issues
+Depends: 
+    R (>= 2.10)
+Suggests: tinytest

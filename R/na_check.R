@@ -23,9 +23,9 @@ write_na_check <- function(d, vars=names(d), file=stdout()){
   )
 }
 
-#' Suggest an check for completeness.
+#' Suggest a check for completeness.
 #'
-#' Suggest an check for completeness.
+#' Suggest a check for completeness.
 #' @export
 #' @example example/na_check.R
 #' @inheritParams suggest_type_check
