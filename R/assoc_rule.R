@@ -76,12 +76,17 @@ write_cond_rule <- function(d, vars=names(d), file = stdout()){
 }
 
 
-#' Suggest a check for completeness.
+#' Suggest a conditional rule
 #'
-#' Suggest a check for completeness.
+#' Suggest a conditional rule based on a association rule.
+#' This functions derives conditional rules based on the non-existance
+#' of combinations of categories in pairs of variables.
+#' For each numerical variable a logical variable is derived that tests for
+#' positivity.
 #' @export
 #' @example example/na_check.R
 #' @importFrom utils combn
+#' @example example/conditional_rule.R
 #' @inheritParams suggest_type_check
 suggest_cond_rule <- function(d, vars = names(d)){
   tf <- tempfile()

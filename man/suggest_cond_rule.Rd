@@ -2,7 +2,7 @@
 % Please edit documentation in R/assoc_rule.R
 \name{suggest_cond_rule}
 \alias{suggest_cond_rule}
-\title{Suggest a check for completeness.}
+\title{Suggest a conditional rule}
 \usage{
 suggest_cond_rule(d, vars = names(d))
 }
@@ -12,7 +12,11 @@ suggest_cond_rule(d, vars = names(d))
 \item{vars}{\code{character} optionally the subset of variables to be used.}
 }
 \description{
-Suggest a check for completeness.
+Suggest a conditional rule based on a association rule.
+This functions derives conditional rules based on the non-existance
+of combinations of categories in pairs of variables.
+For each numerical variable a logical variable is derived that tests for
+positivity.
 }
 \examples{
 data(retailers, package="validate")
@@ -20,4 +24,8 @@ data(retailers, package="validate")
 # will generate check for all columns in retailers that are
 # complete.
 suggest_na_check(retailers)
+data("car_owner")
+
+rules <- suggest_cond_rule(car_owner)
+rules$rules
 }
