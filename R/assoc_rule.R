@@ -57,6 +57,8 @@ atomic_check_expr <- function(name, value, is_logical = FALSE, negate=FALSE){
   deparse(expr)
 }
 
+#' @export
+#' @rdname suggest_cond_rule
 write_cond_rule <- function(d, vars=names(d), file = stdout()){
   is_numeric <- sapply(d[vars], is.numeric)
   for (v in vars[is_numeric]){

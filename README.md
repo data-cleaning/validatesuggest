@@ -84,4 +84,11 @@ suggest_ratio_check(retailers)
 #>  RC8 : staff.costs <= 0.99 * total.costs
 #>  RC9 : other.rev >= -2.8 * profit
 #>  RC10: other.rev <= 4.72 * profit
+
+write_cond_rule(retailers)
+#> 
+#> # Conditional checks
+#> if (staff > 0) other.rev > 0
+#> if (other.rev <= 0) profit > 0
+#> if (other.rev <= 0) vat <= 0
 ```
