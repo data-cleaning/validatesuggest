@@ -73,7 +73,7 @@ Use the more specific suggest functions for more control." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">validatesuggest</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9000</span>
       </span>
     </div>
 
@@ -122,6 +122,7 @@ Use the more specific <code>suggest</code> functions for more control.</p>
     <pre class="usage"><span class='fu'>suggest_rules</span><span class='op'>(</span>
   <span class='va'>d</span>,
   vars <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>d</span><span class='op'>)</span>,
+  domain_check <span class='op'>=</span> <span class='cn'>TRUE</span>,
   range_check <span class='op'>=</span> <span class='cn'>TRUE</span>,
   type_check <span class='op'>=</span> <span class='cn'>TRUE</span>,
   na_check <span class='op'>=</span> <span class='cn'>TRUE</span>,
@@ -139,6 +140,10 @@ Use the more specific <code>suggest</code> functions for more control.</p>
     <tr>
       <th>vars</th>
       <td><p><code>character</code> optionally the subset of variables to be used.</p></td>
+    </tr>
+    <tr>
+      <th>domain_check</th>
+      <td><p>if <code>TRUE</code> include domain_check</p></td>
     </tr>
     <tr>
       <th>range_check</th>
