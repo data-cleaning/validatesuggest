@@ -63,6 +63,6 @@ suggest_domain_check <- function(d, vars = names(d), only_positive=TRUE){
     sprintf("validatesuggest %s"
             , packageVersion("validatesuggest")
     )
-  names(rules) <- paste0("RC", seq_len(length(rules)))
+  names(rules) <- paste0("DC", seq_len(length(rules)))
   rules
 }
