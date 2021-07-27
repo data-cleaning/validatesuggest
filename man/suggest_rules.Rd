@@ -7,6 +7,7 @@
 suggest_rules(
   d,
   vars = names(d),
+  domain_check = TRUE,
   range_check = TRUE,
   type_check = TRUE,
   na_check = TRUE,
@@ -18,6 +19,8 @@ suggest_rules(
 \item{d}{\code{data.frame}, used to generate the checks}
 
 \item{vars}{\code{character} optionally the subset of variables to be used.}
+
+\item{domain_check}{if \code{TRUE} include domain_check}
 
 \item{range_check}{if \code{TRUE} include range_check}
 
