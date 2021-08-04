@@ -41,6 +41,7 @@ write_domain_check <- function(d, vars=names(d), only_positive=TRUE, file=stdout
       )
     }
   })
+  vars <- Filter(function(v) {!is.null(v)}, vars)
   writeLines(
     whisker::whisker.render(DOMAIN_CHECK, data = list(vars=vars)),
     file

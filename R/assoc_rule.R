@@ -32,7 +32,7 @@ derive_arule <- function(vars, d, fraction=0, debug = FALSE){
   })
 }
 
-POS_CHECK <- "^\\.pos\\."
+POS_CHECK_VAR <- "^\\.pos\\."
 
 atomic_check_expr <- function(name, value, is_logical = FALSE, negate=FALSE){
   if (is_logical){
@@ -49,9 +49,9 @@ atomic_check_expr <- function(name, value, is_logical = FALSE, negate=FALSE){
   } else {
     bquote(.(v) == .(value))
   }
-  if (isTRUE(grepl(POS_CHECK, name)) && is.logical(value)){
+  if (isTRUE(grepl(POS_CHECK_VAR, name)) && is.logical(value)){
     # note: negating value is done in line 44
-      v <- as.symbol(sub(POS_CHECK, "", name))
+      v <- as.symbol(sub(POS_CHECK_VAR, "", name))
       expr <- if (value) bquote(.(v) > 0) else bquote(.(v) <= 0)
   }
   deparse(expr)
@@ -84,7 +84,7 @@ write_cond_rule <- function(d, vars=names(d), file = stdout()){
 #' This functions derives conditional rules based on the non-existance
 #' of combinations of categories in pairs of variables.
 #' For each numerical variable a logical variable is derived that tests for
-#' positivity.
+#' positivity. It generates IF THEN rules based on two variables.
 #' @export
 #' @example example/na_check.R
 #' @importFrom utils combn

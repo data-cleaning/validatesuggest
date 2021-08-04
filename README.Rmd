@@ -44,8 +44,9 @@ data(SBS2000, package="validate")
 # does all
 #suggest_rules(retailers)
 
+suggest_pos_check(retailers)
 
-suggest_range_check(retailers, min=TRUE, max=FALSE)
+suggest_range_check(retailers, min=TRUE, max=TRUE)
 
 suggest_na_check(retailers)
 

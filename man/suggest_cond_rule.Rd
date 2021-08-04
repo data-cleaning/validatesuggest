@@ -21,7 +21,7 @@ Suggest a conditional rule based on a association rule.
 This functions derives conditional rules based on the non-existance
 of combinations of categories in pairs of variables.
 For each numerical variable a logical variable is derived that tests for
-positivity.
+positivity. It generates IF THEN rules based on two variables.
 }
 \examples{
 data(retailers, package="validate")
