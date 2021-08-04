@@ -95,19 +95,28 @@
 <span class="co"># does all</span>
 <span class="co">#suggest_rules(retailers)</span>
 
+<span class="fu"><a href="reference/write_pos_check.html">suggest_pos_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
+<span class="co">#&gt; Object of class 'validator' with 7 elements:</span>
+<span class="co">#&gt;  PC1: incl.prob &gt;= 0</span>
+<span class="co">#&gt;  PC2: staff &gt;= 0</span>
+<span class="co">#&gt;  PC3: turnover &gt;= 0</span>
+<span class="co">#&gt;  PC4: total.rev &gt;= 0</span>
+<span class="co">#&gt;  PC5: staff.costs &gt;= 0</span>
+<span class="co">#&gt;  PC6: total.costs &gt;= 0</span>
+<span class="co">#&gt;  PC7: vat &gt;= 0</span>
 
-<span class="fu"><a href="reference/write_range_check.html">suggest_range_check</a></span><span class="op">(</span><span class="va">retailers</span>, min<span class="op">=</span><span class="cn">TRUE</span>, max<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu"><a href="reference/write_range_check.html">suggest_range_check</a></span><span class="op">(</span><span class="va">retailers</span>, min<span class="op">=</span><span class="cn">TRUE</span>, max<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="co">#&gt; Object of class 'validator' with 10 elements:</span>
 <span class="co">#&gt;  RC1 : size %in% c("sc0", "sc3", "sc1", "sc2")</span>
-<span class="co">#&gt;  RC2 : incl.prob &gt;= 0.02</span>
-<span class="co">#&gt;  RC3 : staff &gt;= 1</span>
-<span class="co">#&gt;  RC4 : turnover &gt;= 1</span>
-<span class="co">#&gt;  RC5 : other.rev &gt;= -33</span>
-<span class="co">#&gt;  RC6 : total.rev &gt;= 25</span>
-<span class="co">#&gt;  RC7 : staff.costs &gt;= 2</span>
-<span class="co">#&gt;  RC8 : total.costs &gt;= 22</span>
-<span class="co">#&gt;  RC9 : profit &gt;= -222</span>
-<span class="co">#&gt;  RC10: vat &gt;= 41</span>
+<span class="co">#&gt;  RC2 : in_range(incl.prob, 0.02, 0.14)</span>
+<span class="co">#&gt;  RC3 : in_range(staff, 1, 75)</span>
+<span class="co">#&gt;  RC4 : in_range(turnover, 1, 931397)</span>
+<span class="co">#&gt;  RC5 : in_range(other.rev, -33, 98350)</span>
+<span class="co">#&gt;  RC6 : in_range(total.rev, 25, 931397)</span>
+<span class="co">#&gt;  RC7 : in_range(staff.costs, 2, 221302)</span>
+<span class="co">#&gt;  RC8 : in_range(total.costs, 22, 2725410)</span>
+<span class="co">#&gt;  RC9 : in_range(profit, -222, 225493)</span>
+<span class="co">#&gt;  RC10: in_range(vat, 41, 9655)</span>
 
 <span class="fu"><a href="reference/write_na_check.html">suggest_na_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
 <span class="co">#&gt; Object of class 'validator' with 2 elements:</span>
