@@ -17,7 +17,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Imports: 
     validate,
-    whisker
+    whisker,
+    rpart
 URL: https://github.com/edwindj/validatesuggest
 BugReports: https://github.com/edwindj/validatesuggest/issues
 Depends: 

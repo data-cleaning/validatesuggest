@@ -24,7 +24,7 @@ write_ratio_check <- function(d, vars=names(d), file=stdout(), lin_cor=0.95, dig
     whisker::whisker.render(RATIO_CHECK, data = list(pairs=pairs)),
     file
   )
-  invisible(vars)
+  invisible(pairs)
 }
 
 ratio_check <- function(d, var1, var2, digits = 2){
@@ -51,8 +51,8 @@ ratio_check <- function(d, var1, var2, digits = 2){
 #' @param digits number of digits for rounding
 suggest_ratio_check <- function(d, vars = names(d), lin_cor=0.95, digits=2){
   tf <- tempfile()
-  vars <- write_ratio_check(d, vars, lin_cor = lin_cor, file = tf, digits = digits)
-  if (length(vars) == 0){
+  pairs <- write_ratio_check(d, vars, lin_cor = lin_cor, file = tf, digits = digits)
+  if (length(pairs) == 0){
     return(validate::validator())
   }
 

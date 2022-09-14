@@ -94,10 +94,9 @@ suggest_ratio_check(retailers)
 #>  RA9 : other.rev >= -2.8 * profit
 #>  RA10: other.rev <= 4.72 * profit
 
-write_cond_rule(retailers)
+write_cond_rule(car_owner)
 #> 
 #> # Conditional checks
-#> if (staff > 0) other.rev > 0
-#> if (other.rev <= 0) profit > 0
-#> if (other.rev <= 0) vat <= 0
+#> if (driver_license == FALSE) owns_car == FALSE
+#> if (owns_car == TRUE) income > 0
 ```
