@@ -14,4 +14,5 @@
 #'   , and a monthly income > 1500 can own a car}
 #'   \item{car_color}{NA when there is no car}
 #' }
+#' @example example/conditional_rule.R
 "car_owner"

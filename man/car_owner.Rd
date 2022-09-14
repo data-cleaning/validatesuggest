@@ -23,4 +23,10 @@ car_owner
 \description{
 A constructed data set useful for detecting conditinal dependencies.
 }
+\examples{
+data("car_owner")
+
+rules <- suggest_cond_rule(car_owner)
+rules$rules
+}
 \keyword{datasets}
