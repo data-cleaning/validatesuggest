@@ -2,9 +2,21 @@
 % Please edit documentation in R/suggest_rules.R
 \name{suggest_rules}
 \alias{suggest_rules}
+\alias{suggest_all}
 \title{Suggest rules}
 \usage{
 suggest_rules(
+  d,
+  vars = names(d),
+  domain_check = TRUE,
+  range_check = TRUE,
+  type_check = TRUE,
+  na_check = TRUE,
+  unique_check = TRUE,
+  ratio_check = TRUE
+)
+
+suggest_all(
   d,
   vars = names(d),
   domain_check = TRUE,

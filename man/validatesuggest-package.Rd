@@ -6,9 +6,7 @@
 \alias{validatesuggest-package}
 \title{validatesuggest: Generate Suggestions for Validation Rules}
 \description{
-Generate suggestions for validation rules from a reference
-   data set, which can be used as a starting point for domain specific 
-   rules.
+Generate suggestions for validation rules from a reference data set, which can be used as a starting point for domain specific rules.
 }
 \seealso{
 Useful links:

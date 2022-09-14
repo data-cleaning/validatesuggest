@@ -43,4 +43,8 @@ suggest_rules <- function( d
   rules
 }
 
+#' @export
+#' @rdname suggest_rules
+#' @aliases suggest_rules
+suggest_all <- suggest_rules
 # (rules <- suggest_rules(iris))
