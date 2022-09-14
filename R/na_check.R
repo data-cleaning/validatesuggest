@@ -21,6 +21,7 @@ write_na_check <- function(d, vars=names(d), file=stdout()){
     whisker::whisker.render(NA_CHECK, data = list(vars=vars)),
     file
   )
+  invisible(vars)
 }
 
 #' Suggest a check for completeness.
@@ -31,7 +32,10 @@ write_na_check <- function(d, vars=names(d), file=stdout()){
 #' @inheritParams suggest_type_check
 suggest_na_check <- function(d, vars = names(d)){
   tf <- tempfile()
-  write_na_check(d, vars = vars, file = tf)
+  vars <- write_na_check(d, vars = vars, file = tf)
+  if (length(vars) == 0){
+    return(validator())
+  }
 
   rules <- validate::validator(.file=tf)
   validate::description(rules) <-

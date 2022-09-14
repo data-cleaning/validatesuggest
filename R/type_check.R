@@ -17,6 +17,7 @@ write_type_check <- function(d, vars=names(d), file=stdout()){
     whisker::whisker.render(TYPE_CHECK, data = list(vars=vars)),
     file
   )
+  invisible(vars)
 }
 
 #' suggest type check
@@ -25,7 +26,10 @@ write_type_check <- function(d, vars=names(d), file=stdout()){
 #' @param vars `character` optionally the subset of variables to be used.
 suggest_type_check <- function(d, vars = names(d)){
   tf <- tempfile()
-  write_type_check(d, vars = vars, file = tf)
+  vars <- write_type_check(d, vars = vars, file = tf)
+  if (length(vars) == 0){
+    return(validator())
+  }
 
   rules <- validate::validator(.file=tf)
   validate::description(rules) <-

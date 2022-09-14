@@ -21,6 +21,7 @@ write_pos_check <- function(d, vars=names(d), only_positive=TRUE, file=stdout())
     whisker::whisker.render(POS_CHECK, data = list(vars=vars)),
     file
   )
+  invisible(vars)
 }
 
 #' Suggest a range check
@@ -31,7 +32,11 @@ write_pos_check <- function(d, vars=names(d), only_positive=TRUE, file=stdout())
 #' @example example/range_check.R
 suggest_pos_check <- function(d, vars = names(d), only_positive=TRUE){
   tf <- tempfile()
-  write_pos_check(d, vars, file = tf, only_positive = only_positive)
+  vars <- write_pos_check(d, vars, file = tf, only_positive = only_positive)
+  if (length(vars) == 0){
+    return(validator())
+  }
+
   rules <- validate::validator(.file = tf)
   validate::description(rules) <-
     sprintf("positivity check")

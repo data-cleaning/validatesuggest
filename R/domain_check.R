@@ -46,6 +46,7 @@ write_domain_check <- function(d, vars=names(d), only_positive=TRUE, file=stdout
     whisker::whisker.render(DOMAIN_CHECK, data = list(vars=vars)),
     file
   )
+  invisible(vars)
 }
 
 #' Suggest a range check
@@ -56,7 +57,10 @@ write_domain_check <- function(d, vars=names(d), only_positive=TRUE, file=stdout
 #' @example example/range_check.R
 suggest_domain_check <- function(d, vars = names(d), only_positive=TRUE){
   tf <- tempfile()
-  write_domain_check(d, vars, file = tf)
+  vars <- write_domain_check(d, vars, file = tf)
+  if (length(vars) == 0){
+    return(validator())
+  }
   rules <- validate::validator(.file = tf)
   validate::description(rules) <-
     sprintf("domain check")

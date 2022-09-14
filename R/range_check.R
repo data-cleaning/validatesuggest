@@ -61,6 +61,7 @@ write_range_check <- function(d, vars=names(d), min=TRUE, max=FALSE, file=stdout
     whisker::whisker.render(RANGE_CHECK, data = list(vars=vars)),
     file
   )
+  invisible(vars)
 }
 
 #' Suggest a range check
@@ -72,7 +73,11 @@ write_range_check <- function(d, vars=names(d), min=TRUE, max=FALSE, file=stdout
 #' @param max `TRUE` or `FALSE`, should the maximum value be checked?
 suggest_range_check <- function(d, vars = names(d), min=TRUE, max=FALSE){
   tf <- tempfile()
-  write_range_check(d, vars, min=min, max=max, file = tf)
+  vars <- write_range_check(d, vars, min=min, max=max, file = tf)
+  if (length(vars) == 0){
+    return(validator())
+  }
+
   rules <- validate::validator(.file = tf)
   validate::description(rules) <-
     sprintf("range check")
