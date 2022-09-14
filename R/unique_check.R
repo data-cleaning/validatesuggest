@@ -24,6 +24,7 @@ write_unique_check <- function(d, vars=names(d), file=stdout(), fraction=0.95){
     whisker::whisker.render(UNIQUE_CHECK, data = list(vars=vars)),
     file
   )
+  invisible(vars)
 }
 
 #' @export
@@ -32,7 +33,10 @@ write_unique_check <- function(d, vars=names(d), file=stdout(), fraction=0.95){
 #' the check will be generated.
 suggest_unique_check <- function(d, vars = names(d), fraction=0.95){
   tf <- tempfile()
-  write_unique_check(d, vars, fraction=0.95, file = tf)
+  vars <- write_unique_check(d, vars, fraction=0.95, file = tf)
+  if (length(vars) == 0){
+    return(validator())
+  }
   rules <- validate::validator(.file = tf)
   validate::description(rules) <-
     sprintf("range check")
