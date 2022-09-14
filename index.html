@@ -21,6 +21,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -33,25 +35,19 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">validatesuggest</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/edwindj/validatesuggest/">
+  <a href="https://github.com/edwindj/validatesuggest/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -68,142 +64,152 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="validatesuggest" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#validatesuggest" class="anchor"></a>validatesuggest</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="validatesuggest">validatesuggest<a class="anchor" aria-label="anchor" href="#validatesuggest"></a>
+</h1></div>
 <!-- badges: start -->
-
-<p>The goal of validatesuggest is to generate suggestions for <a href="https://CRAN.R-project.org/package=validate">validation</a> rules from a supplied dataset. These can be used as a starting point for a rule set and are to be adjusted by domain experts.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
+<p>The goal of validatesuggest is to generate suggestions for <a href="https://CRAN.R-project.org/package=validate" class="external-link">validation</a> rules from a supplied dataset. These can be used as a starting point for a rule set and are to be adjusted by domain experts.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>And the development version from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"edwindj/validatesuggest"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"edwindj/validatesuggest"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/data-cleaning/validate">validate</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/edwindj/validatesuggest">validatesuggest</a></span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">retailers</span>, package<span class="op">=</span><span class="st">"validate"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">SBS2000</span>, package<span class="op">=</span><span class="st">"validate"</span><span class="op">)</span>
-
-<span class="co"># does all</span>
-<span class="co">#suggest_rules(retailers)</span>
-
-<span class="fu"><a href="reference/write_pos_check.html">suggest_pos_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
-<span class="co">#&gt; Object of class 'validator' with 7 elements:</span>
-<span class="co">#&gt;  PC1: incl.prob &gt;= 0</span>
-<span class="co">#&gt;  PC2: staff &gt;= 0</span>
-<span class="co">#&gt;  PC3: turnover &gt;= 0</span>
-<span class="co">#&gt;  PC4: total.rev &gt;= 0</span>
-<span class="co">#&gt;  PC5: staff.costs &gt;= 0</span>
-<span class="co">#&gt;  PC6: total.costs &gt;= 0</span>
-<span class="co">#&gt;  PC7: vat &gt;= 0</span>
-
-<span class="fu"><a href="reference/write_range_check.html">suggest_range_check</a></span><span class="op">(</span><span class="va">retailers</span>, min<span class="op">=</span><span class="cn">TRUE</span>, max<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt; Object of class 'validator' with 10 elements:</span>
-<span class="co">#&gt;  RC1 : size %in% c("sc0", "sc3", "sc1", "sc2")</span>
-<span class="co">#&gt;  RC2 : in_range(incl.prob, 0.02, 0.14)</span>
-<span class="co">#&gt;  RC3 : in_range(staff, 1, 75)</span>
-<span class="co">#&gt;  RC4 : in_range(turnover, 1, 931397)</span>
-<span class="co">#&gt;  RC5 : in_range(other.rev, -33, 98350)</span>
-<span class="co">#&gt;  RC6 : in_range(total.rev, 25, 931397)</span>
-<span class="co">#&gt;  RC7 : in_range(staff.costs, 2, 221302)</span>
-<span class="co">#&gt;  RC8 : in_range(total.costs, 22, 2725410)</span>
-<span class="co">#&gt;  RC9 : in_range(profit, -222, 225493)</span>
-<span class="co">#&gt;  RC10: in_range(vat, 41, 9655)</span>
-
-<span class="fu"><a href="reference/write_na_check.html">suggest_na_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
-<span class="co">#&gt; Object of class 'validator' with 2 elements:</span>
-<span class="co">#&gt;  NA1: is.complete(size)</span>
-<span class="co">#&gt;  NA2: is.complete(incl.prob)</span>
-
-<span class="fu"><a href="reference/write_unique_check.html">suggest_unique_check</a></span><span class="op">(</span><span class="va">SBS2000</span><span class="op">)</span>
-<span class="co">#&gt; Object of class 'validator' with 1 elements:</span>
-<span class="co">#&gt;  UN1: all_unique(id)</span>
-
-<span class="fu"><a href="reference/write_type_check.html">suggest_type_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
-<span class="co">#&gt; Object of class 'validator' with 10 elements:</span>
-<span class="co">#&gt;  TC1 : is.factor(size)</span>
-<span class="co">#&gt;  TC2 : is.numeric(incl.prob)</span>
-<span class="co">#&gt;  TC3 : is.integer(staff)</span>
-<span class="co">#&gt;  TC4 : is.integer(turnover)</span>
-<span class="co">#&gt;  TC5 : is.integer(other.rev)</span>
-<span class="co">#&gt;  TC6 : is.integer(total.rev)</span>
-<span class="co">#&gt;  TC7 : is.integer(staff.costs)</span>
-<span class="co">#&gt;  TC8 : is.integer(total.costs)</span>
-<span class="co">#&gt;  TC9 : is.integer(profit)</span>
-<span class="co">#&gt;  TC10: is.integer(vat)</span>
-
-<span class="fu"><a href="reference/write_ratio_check.html">suggest_ratio_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
-<span class="co">#&gt; Object of class 'validator' with 10 elements:</span>
-<span class="co">#&gt;  RC1 : turnover &gt;= 0 * total.rev</span>
-<span class="co">#&gt;  RC2 : turnover &lt;= 9.07 * total.rev</span>
-<span class="co">#&gt;  RC3 : other.rev &gt;= -0.1 * staff.costs</span>
-<span class="co">#&gt;  RC4 : other.rev &lt;= 34.55 * staff.costs</span>
-<span class="co">#&gt;  RC5 : other.rev &gt;= -0.01 * total.costs</span>
-<span class="co">#&gt;  RC6 : other.rev &lt;= 1.27 * total.costs</span>
-<span class="co">#&gt;  RC7 : staff.costs &gt;= 0 * total.costs</span>
-<span class="co">#&gt;  RC8 : staff.costs &lt;= 0.99 * total.costs</span>
-<span class="co">#&gt;  RC9 : other.rev &gt;= -2.8 * profit</span>
-<span class="co">#&gt;  RC10: other.rev &lt;= 4.72 * profit</span>
-
-<span class="fu"><a href="reference/write_cond_rule.html">write_cond_rule</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; # Conditional checks</span>
-<span class="co">#&gt; if (staff &gt; 0) other.rev &gt; 0</span>
-<span class="co">#&gt; if (other.rev &lt;= 0) profit &gt; 0</span>
-<span class="co">#&gt; if (other.rev &lt;= 0) vat &lt;= 0</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/data-cleaning/validate" class="external-link">validate</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/edwindj/validatesuggest" class="external-link">validatesuggest</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">retailers</span>, package<span class="op">=</span><span class="st">"validate"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">SBS2000</span>, package<span class="op">=</span><span class="st">"validate"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># does all</span></span>
+<span><span class="co">#suggest_rules(retailers)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/suggest_pos_check.html">suggest_pos_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Object of class 'validator' with 7 elements:</span></span>
+<span><span class="co">#&gt;  PC1: incl.prob &gt;= 0</span></span>
+<span><span class="co">#&gt;  PC2: staff &gt;= 0</span></span>
+<span><span class="co">#&gt;  PC3: turnover &gt;= 0</span></span>
+<span><span class="co">#&gt;  PC4: total.rev &gt;= 0</span></span>
+<span><span class="co">#&gt;  PC5: staff.costs &gt;= 0</span></span>
+<span><span class="co">#&gt;  PC6: total.costs &gt;= 0</span></span>
+<span><span class="co">#&gt;  PC7: vat &gt;= 0</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/suggest_range_check.html">suggest_range_check</a></span><span class="op">(</span><span class="va">retailers</span>, min<span class="op">=</span><span class="cn">TRUE</span>, max<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Object of class 'validator' with 10 elements:</span></span>
+<span><span class="co">#&gt;  RC1 : size %in% c("sc0", "sc3", "sc1", "sc2")</span></span>
+<span><span class="co">#&gt;  RC2 : in_range(incl.prob, 0.02, 0.14)</span></span>
+<span><span class="co">#&gt;  RC3 : in_range(staff, 1, 75)</span></span>
+<span><span class="co">#&gt;  RC4 : in_range(turnover, 1, 931397)</span></span>
+<span><span class="co">#&gt;  RC5 : in_range(other.rev, -33, 98350)</span></span>
+<span><span class="co">#&gt;  RC6 : in_range(total.rev, 25, 931397)</span></span>
+<span><span class="co">#&gt;  RC7 : in_range(staff.costs, 2, 221302)</span></span>
+<span><span class="co">#&gt;  RC8 : in_range(total.costs, 22, 2725410)</span></span>
+<span><span class="co">#&gt;  RC9 : in_range(profit, -222, 225493)</span></span>
+<span><span class="co">#&gt;  RC10: in_range(vat, 41, 9655)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/suggest_na_check.html">suggest_na_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Object of class 'validator' with 2 elements:</span></span>
+<span><span class="co">#&gt;  NA1: is.complete(size)</span></span>
+<span><span class="co">#&gt;  NA2: is.complete(incl.prob)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/suggest_unique_check.html">suggest_unique_check</a></span><span class="op">(</span><span class="va">SBS2000</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Object of class 'validator' with 1 elements:</span></span>
+<span><span class="co">#&gt;  UN1: all_unique(id)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/suggest_type_check.html">suggest_type_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Object of class 'validator' with 10 elements:</span></span>
+<span><span class="co">#&gt;  TC1 : is.factor(size)</span></span>
+<span><span class="co">#&gt;  TC2 : is.numeric(incl.prob)</span></span>
+<span><span class="co">#&gt;  TC3 : is.integer(staff)</span></span>
+<span><span class="co">#&gt;  TC4 : is.integer(turnover)</span></span>
+<span><span class="co">#&gt;  TC5 : is.integer(other.rev)</span></span>
+<span><span class="co">#&gt;  TC6 : is.integer(total.rev)</span></span>
+<span><span class="co">#&gt;  TC7 : is.integer(staff.costs)</span></span>
+<span><span class="co">#&gt;  TC8 : is.integer(total.costs)</span></span>
+<span><span class="co">#&gt;  TC9 : is.integer(profit)</span></span>
+<span><span class="co">#&gt;  TC10: is.integer(vat)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/suggest_ratio_check.html">suggest_ratio_check</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Object of class 'validator' with 10 elements:</span></span>
+<span><span class="co">#&gt;  RC1 : turnover &gt;= 0 * total.rev</span></span>
+<span><span class="co">#&gt;  RC2 : turnover &lt;= 9.07 * total.rev</span></span>
+<span><span class="co">#&gt;  RC3 : other.rev &gt;= -0.1 * staff.costs</span></span>
+<span><span class="co">#&gt;  RC4 : other.rev &lt;= 34.55 * staff.costs</span></span>
+<span><span class="co">#&gt;  RC5 : other.rev &gt;= -0.01 * total.costs</span></span>
+<span><span class="co">#&gt;  RC6 : other.rev &lt;= 1.27 * total.costs</span></span>
+<span><span class="co">#&gt;  RC7 : staff.costs &gt;= 0 * total.costs</span></span>
+<span><span class="co">#&gt;  RC8 : staff.costs &lt;= 0.99 * total.costs</span></span>
+<span><span class="co">#&gt;  RC9 : other.rev &gt;= -2.8 * profit</span></span>
+<span><span class="co">#&gt;  RC10: other.rev &lt;= 4.72 * profit</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/suggest_cond_rule.html">write_cond_rule</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; # Conditional checks</span></span>
+<span><span class="co">#&gt; if (staff &gt; 0) other.rev &gt; 0</span></span>
+<span><span class="co">#&gt; if (other.rev &lt;= 0) profit &gt; 0</span></span>
+<span><span class="co">#&gt; if (other.rev &lt;= 0) vat &lt;= 0</span></span></code></pre></div>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/edwindj/validatesuggest/">https://​github.com/​edwindj/​validatesuggest/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/edwindj/validatesuggest/issues">https://​github.com/​edwindj/​validatesuggest/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Edwin de Jonge <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-6580-4718" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="https://github.com/edwindj/validatesuggest/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/edwindj/validatesuggest/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://CRAN.R-project.org/package=validatesuggest"><img src="https://www.r-pkg.org/badges/version/validatesuggest" alt="CRAN status"></a></li>
-<li><a href="https://github.com/edwindj/validatesuggest/actions"><img src="https://github.com/edwindj/validatesuggest/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing validatesuggest</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Edwin de Jonge <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-6580-4718" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://CRAN.R-project.org/package=validatesuggest" class="external-link"><img src="https://www.r-pkg.org/badges/version/validatesuggest" alt="CRAN status"></a></li>
+<li><a href="https://github.com/edwindj/validatesuggest/actions" class="external-link"><img src="https://github.com/edwindj/validatesuggest/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Edwin de Jonge.</p>
+  <p></p>
+<p>Developed by Edwin de Jonge.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -211,6 +217,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://edwindj.github.io/validatesuggest/404.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/authors.html</loc>
+  </url>
+  <url>
     <loc>https://edwindj.github.io/validatesuggest/index.html</loc>
   </url>
   <url>
     <loc>https://edwindj.github.io/validatesuggest/reference/car_owner.html</loc>
+  </url>
+  <url>
+    <loc>https://edwindj.github.io/validatesuggest/reference/index.html</loc>
   </url>
   <url>
     <loc>https://edwindj.github.io/validatesuggest/reference/suggest_cond_rule.html</loc>
