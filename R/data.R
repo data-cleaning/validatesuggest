@@ -24,11 +24,11 @@
 #'
 #' @format
 #' \describe{
-#'    \item{ID}
-#'    \item{Age}
-#'    \item{Married}
-#'    \item{Employed}
-#'    \item{Working_hours}
+#'    \item{ID}{ID}
+#'    \item{Age}{Age of person}
+#'    \item{Married}{Marital status}
+#'    \item{Employed}{Employed or not}
+#'    \item{Working_hours}{Working hours}
 #' }
 
 "task2"

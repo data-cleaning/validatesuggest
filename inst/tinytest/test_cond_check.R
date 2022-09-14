@@ -1,3 +1,4 @@
-task2 <- read.csv("./data-raw/task2.csv")
+data(task2)
 
-suggest_cond_rule(task2)
+v <- suggest_cond_rule(task2)
+expect_equal(length(v), 0)
