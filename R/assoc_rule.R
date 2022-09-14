@@ -75,7 +75,7 @@ write_cond_rule <- function(d, vars=names(d), file = stdout()){
     whisker::whisker.render(COND_CHECK, data = list(pairs=pairs)),
     file
   )
-  invisible(vars)
+  invisible(pairs)
 }
 
 
@@ -93,8 +93,8 @@ write_cond_rule <- function(d, vars=names(d), file = stdout()){
 #' @inheritParams suggest_type_check
 suggest_cond_rule <- function(d, vars = names(d)){
   tf <- tempfile()
-  vars <- write_cond_rule(d, vars = vars, file = tf)
-  if (length(vars) == 0){
+  pairs <- write_cond_rule(d, vars = vars, file = tf)
+  if (length(pairs) == 0){
     return(validate::validator())
   }
 

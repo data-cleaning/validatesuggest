@@ -16,3 +16,19 @@
 #' }
 #' @example example/conditional_rule.R
 "car_owner"
+
+#' task2 dataset
+#'
+#' Fictuous test data set from European (ESSnet) project on validation 2017.
+#' @references European (ESSnet) project on validation 2017
+#'
+#' @format
+#' \describe{
+#'    \item{ID}
+#'    \item{Age}
+#'    \item{Married}
+#'    \item{Employed}
+#'    \item{Working_hours}
+#' }
+
+"task2"
