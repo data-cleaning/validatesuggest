@@ -63,6 +63,6 @@ suggest_ratio_check <- function(d, vars = names(d), lin_cor=0.95, digits=2){
     sprintf("validatesuggest %s"
             , packageVersion("validatesuggest")
     )
-  names(rules) <- paste0("RC", seq_len(length(rules)))
+  names(rules) <- paste0("RA", seq_len(length(rules)))
   rules
 }

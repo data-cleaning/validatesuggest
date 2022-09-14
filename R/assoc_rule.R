@@ -98,7 +98,6 @@ suggest_cond_rule <- function(d, vars = names(d)){
     return(validator())
   }
 
-
   rules <- validate::validator(.file=tf)
   validate::description(rules) <-
     sprintf("conditional rule")

@@ -83,16 +83,16 @@ suggest_type_check(retailers)
 
 suggest_ratio_check(retailers)
 #> Object of class 'validator' with 10 elements:
-#>  RC1 : turnover >= 0 * total.rev
-#>  RC2 : turnover <= 9.07 * total.rev
-#>  RC3 : other.rev >= -0.1 * staff.costs
-#>  RC4 : other.rev <= 34.55 * staff.costs
-#>  RC5 : other.rev >= -0.01 * total.costs
-#>  RC6 : other.rev <= 1.27 * total.costs
-#>  RC7 : staff.costs >= 0 * total.costs
-#>  RC8 : staff.costs <= 0.99 * total.costs
-#>  RC9 : other.rev >= -2.8 * profit
-#>  RC10: other.rev <= 4.72 * profit
+#>  RA1 : turnover >= 0 * total.rev
+#>  RA2 : turnover <= 9.07 * total.rev
+#>  RA3 : other.rev >= -0.1 * staff.costs
+#>  RA4 : other.rev <= 34.55 * staff.costs
+#>  RA5 : other.rev >= -0.01 * total.costs
+#>  RA6 : other.rev <= 1.27 * total.costs
+#>  RA7 : staff.costs >= 0 * total.costs
+#>  RA8 : staff.costs <= 0.99 * total.costs
+#>  RA9 : other.rev >= -2.8 * profit
+#>  RA10: other.rev <= 4.72 * profit
 
 write_cond_rule(retailers)
 #> 
