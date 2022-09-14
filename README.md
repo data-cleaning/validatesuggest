@@ -7,7 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/validatesuggest)](https://CRAN.R-project.org/package=validatesuggest)
-[![R-CMD-check](https://github.com/edwindj/validatesuggest/workflows/R-CMD-check/badge.svg)](https://github.com/edwindj/validatesuggest/actions)
+[![R-CMD-check](https://github.com/edwindj/validatesuggest/workflows/R-CMD-check/badge.svg)](https://github.com/data-cleaning/validatesuggest/actions)
 <!-- badges: end -->
 
 The goal of validatesuggest is to generate suggestions for
@@ -21,7 +21,7 @@ And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("edwindj/validatesuggest")
+devtools::install_github("data-cleaning/validatesuggest")
 ```
 
 ## Example
