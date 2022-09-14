@@ -34,7 +34,7 @@ suggest_na_check <- function(d, vars = names(d)){
   tf <- tempfile()
   vars <- write_na_check(d, vars = vars, file = tf)
   if (length(vars) == 0){
-    return(validator())
+    return(validate::validator())
   }
 
   rules <- validate::validator(.file=tf)

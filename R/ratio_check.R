@@ -53,7 +53,7 @@ suggest_ratio_check <- function(d, vars = names(d), lin_cor=0.95, digits=2){
   tf <- tempfile()
   vars <- write_ratio_check(d, vars, lin_cor = lin_cor, file = tf, digits = digits)
   if (length(vars) == 0){
-    return(validator())
+    return(validate::validator())
   }
 
   rules <- validate::validator(.file = tf)

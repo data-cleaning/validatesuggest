@@ -95,7 +95,7 @@ suggest_cond_rule <- function(d, vars = names(d)){
   tf <- tempfile()
   vars <- write_cond_rule(d, vars = vars, file = tf)
   if (length(vars) == 0){
-    return(validator())
+    return(validate::validator())
   }
 
   rules <- validate::validator(.file=tf)

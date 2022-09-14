@@ -59,7 +59,7 @@ suggest_domain_check <- function(d, vars = names(d), only_positive=TRUE){
   tf <- tempfile()
   vars <- write_domain_check(d, vars, file = tf)
   if (length(vars) == 0){
-    return(validator())
+    return(validate::validator())
   }
   rules <- validate::validator(.file = tf)
   validate::description(rules) <-

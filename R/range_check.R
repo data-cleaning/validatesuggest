@@ -75,7 +75,7 @@ suggest_range_check <- function(d, vars = names(d), min=TRUE, max=FALSE){
   tf <- tempfile()
   vars <- write_range_check(d, vars, min=min, max=max, file = tf)
   if (length(vars) == 0){
-    return(validator())
+    return(validate::validator())
   }
 
   rules <- validate::validator(.file = tf)

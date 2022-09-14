@@ -35,7 +35,7 @@ suggest_unique_check <- function(d, vars = names(d), fraction=0.95){
   tf <- tempfile()
   vars <- write_unique_check(d, vars, fraction=0.95, file = tf)
   if (length(vars) == 0){
-    return(validator())
+    return(validate::validator())
   }
   rules <- validate::validator(.file = tf)
   validate::description(rules) <-

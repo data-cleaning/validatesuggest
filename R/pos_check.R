@@ -34,7 +34,7 @@ suggest_pos_check <- function(d, vars = names(d), only_positive=TRUE){
   tf <- tempfile()
   vars <- write_pos_check(d, vars, file = tf, only_positive = only_positive)
   if (length(vars) == 0){
-    return(validator())
+    return(validate::validator())
   }
 
   rules <- validate::validator(.file = tf)
