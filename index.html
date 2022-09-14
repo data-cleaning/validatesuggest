@@ -148,12 +148,11 @@
 <span><span class="co">#&gt;  RA9 : other.rev &gt;= -2.8 * profit</span></span>
 <span><span class="co">#&gt;  RA10: other.rev &lt;= 4.72 * profit</span></span>
 <span></span>
-<span><span class="fu"><a href="reference/suggest_cond_rule.html">write_cond_rule</a></span><span class="op">(</span><span class="va">retailers</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/suggest_cond_rule.html">write_cond_rule</a></span><span class="op">(</span><span class="va">car_owner</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; # Conditional checks</span></span>
-<span><span class="co">#&gt; if (staff &gt; 0) other.rev &gt; 0</span></span>
-<span><span class="co">#&gt; if (other.rev &lt;= 0) profit &gt; 0</span></span>
-<span><span class="co">#&gt; if (other.rev &lt;= 0) vat &lt;= 0</span></span></code></pre></div>
+<span><span class="co">#&gt; if (driver_license == FALSE) owns_car == FALSE</span></span>
+<span><span class="co">#&gt; if (owns_car == TRUE) income &gt; 0</span></span></code></pre></div>
 </div>
 </div>
   </div>
