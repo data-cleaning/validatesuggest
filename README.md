@@ -7,7 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/validatesuggest)](https://CRAN.R-project.org/package=validatesuggest)
-[![R-CMD-check](https://github.com/edwindj/validatesuggest/workflows/R-CMD-check/badge.svg)](https://github.com/data-cleaning/validatesuggest/actions)
+[![R-CMD-check](https://github.com/data-cleaning/validatesuggest/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/data-cleaning/validatesuggest/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of validatesuggest is to generate suggestions for
