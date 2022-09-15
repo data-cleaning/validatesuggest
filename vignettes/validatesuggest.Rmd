@@ -9,6 +9,7 @@ vignette: >
 editor_options: 
   markdown: 
     wrap: 72
+bibliography: references.bib
 ---
 
 ```{r, include = FALSE}
@@ -32,14 +33,14 @@ has led to the definition of standardized validation rules that cover
 the most common use-cases in official statistics. Examples are the
 definition of internationally agreed 'main types of validation rules' by
 Eurostat , and the set of recipes and standard functions as offered in
-the well-known R-package 'validate', which are documented in the online
+the well-known R-package validate, which are documented in the online
 cookbook [3]. In this presentation we take another approach to rule
 maintenance. In addition to the knowledge of the domain specialist we
 let the data speak. Properties of the data, such as type, range,
 distribution, correlation can be used to derive rules that catch the
 essentials of the data. Since the number of rules that could potentially
 be derived from data in general could be endless, we use the existing
-international and national standardised validation rule systems to know
+international and national standardized validation rule systems to know
 what type of rules make sense. A refinement of the concept is to also
 take the time dimension of time series data into consideration. That way
 time-dependent validation rules com into reach. The suggested rules are
@@ -49,6 +50,8 @@ is intended as a suggestion to the rule maintainers. They should always
 be checked and interpreted before putting into production. The type of
 rules currently implemented in the experimental R-package
 'validatesuggest' are:
+
+validate, @validate[]
 
 ## Usage
 
