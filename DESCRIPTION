@@ -29,4 +29,8 @@ URL: https://github.com/edwindj/validatesuggest
 BugReports: https://github.com/edwindj/validatesuggest/issues
 Depends: 
     R (>= 2.10)
-Suggests: tinytest
+Suggests: 
+    knitr,
+    rmarkdown,
+    tinytest
+VignetteBuilder: knitr

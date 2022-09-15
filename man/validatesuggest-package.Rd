@@ -8,6 +8,14 @@
 \description{
 Generate suggestions for validation rules from a reference data set, which can be used as a starting point for domain specific rules.
 }
+\section{validatesuggest}{
+
+The goal of validatesuggest is to generate suggestions for
+validation rules from a supplied
+dataset. These can be used as a starting point for a rule set and are to be
+adjusted by domain experts.
+}
+
 \seealso{
 Useful links:
 \itemize{
