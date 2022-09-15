@@ -3,6 +3,7 @@
 \name{suggest_rules}
 \alias{suggest_rules}
 \alias{suggest_all}
+\alias{write_all_suggestions}
 \title{Suggest rules}
 \usage{
 suggest_rules(
@@ -10,10 +11,12 @@ suggest_rules(
   vars = names(d),
   domain_check = TRUE,
   range_check = TRUE,
+  pos_check = TRUE,
   type_check = TRUE,
   na_check = TRUE,
   unique_check = TRUE,
-  ratio_check = TRUE
+  ratio_check = TRUE,
+  conditional_rule = TRUE
 )
 
 suggest_all(
@@ -21,10 +24,26 @@ suggest_all(
   vars = names(d),
   domain_check = TRUE,
   range_check = TRUE,
+  pos_check = TRUE,
   type_check = TRUE,
   na_check = TRUE,
   unique_check = TRUE,
-  ratio_check = TRUE
+  ratio_check = TRUE,
+  conditional_rule = TRUE
+)
+
+write_all_suggestions(
+  d,
+  vars = names(d),
+  file = stdout(),
+  domain_check = TRUE,
+  range_check = TRUE,
+  type_check = TRUE,
+  pos_check = TRUE,
+  na_check = TRUE,
+  unique_check = TRUE,
+  ratio_check = TRUE,
+  conditional_rule = TRUE
 )
 }
 \arguments{
@@ -36,6 +55,8 @@ suggest_all(
 
 \item{range_check}{if \code{TRUE} include range_check}
 
+\item{pos_check}{if \code{TRUE} include pos_check}
+
 \item{type_check}{if \code{TRUE} include type_check}
 
 \item{na_check}{if \code{TRUE} include na_check}
@@ -43,6 +64,10 @@ suggest_all(
 \item{unique_check}{if \code{TRUE} include unique_check}
 
 \item{ratio_check}{if \code{TRUE} include ratio_check}
+
+\item{conditional_rule}{if \code{TRUE} include cond_rule}
+
+\item{file}{file to which the checks will be written to.}
 }
 \description{
 Suggests rules using the various suggestion checks.
