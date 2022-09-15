@@ -2,11 +2,17 @@ Package: validatesuggest
 Title: Generate Suggestions for Validation Rules
 Version: 0.2.0.9000
 Authors@R: 
-    person(given = "Edwin",
+    c(person(given = "Edwin",
            family = "de Jonge",
            role = c("aut", "cre"),
            email = "edwindjonge@gmail.com",
-           comment = c(ORCID="0000-0002-6580-4718"))
+           comment = c(ORCID="0000-0002-6580-4718")
+           ),
+         person(given = "Olav",
+         family = "ten Bosch",
+         role = c("aut")
+         )
+      )
 Description: Generate suggestions for validation rules from a reference
    data set, which can be used as a starting point for domain specific 
    rules.
