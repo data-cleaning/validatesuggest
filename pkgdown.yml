@@ -2,7 +2,7 @@ pandoc: 2.14.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-09-15T07:36Z
+last_built: 2022-09-15T14:30Z
 urls:
   reference: https://edwindj.github.io/validatesuggest/reference
   article: https://edwindj.github.io/validatesuggest/articles
