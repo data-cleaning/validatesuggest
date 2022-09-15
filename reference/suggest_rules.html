@@ -57,10 +57,12 @@ Use the more specific <code>suggest</code> functions for more control.</p>
 <span>  vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span>,</span>
 <span>  domain_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  range_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  pos_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  type_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  na_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  unique_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  ratio_check <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  ratio_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  conditional_rule <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">suggest_all</span><span class="op">(</span></span>
@@ -68,10 +70,26 @@ Use the more specific <code>suggest</code> functions for more control.</p>
 <span>  vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span>,</span>
 <span>  domain_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  range_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  pos_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  type_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  na_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  unique_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  ratio_check <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  ratio_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  conditional_rule <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">write_all_suggestions</span><span class="op">(</span></span>
+<span>  <span class="va">d</span>,</span>
+<span>  vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span>,</span>
+<span>  file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/showConnections.html" class="external-link">stdout</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  domain_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  range_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  type_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  pos_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  na_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  unique_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  ratio_check <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  conditional_rule <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -93,6 +111,10 @@ Use the more specific <code>suggest</code> functions for more control.</p>
 <dd><p>if <code>TRUE</code> include range_check</p></dd>
 
 
+<dt>pos_check</dt>
+<dd><p>if <code>TRUE</code> include pos_check</p></dd>
+
+
 <dt>type_check</dt>
 <dd><p>if <code>TRUE</code> include type_check</p></dd>
 
@@ -107,6 +129,14 @@ Use the more specific <code>suggest</code> functions for more control.</p>
 
 <dt>ratio_check</dt>
 <dd><p>if <code>TRUE</code> include ratio_check</p></dd>
+
+
+<dt>conditional_rule</dt>
+<dd><p>if <code>TRUE</code> include cond_rule</p></dd>
+
+
+<dt>file</dt>
+<dd><p>file to which the checks will be written to.</p></dd>
 
 </dl></div>
 
