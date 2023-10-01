@@ -13,9 +13,9 @@ Authors@R:
          role = c("aut")
          )
       )
-Description: Generate suggestions for validation rules from a reference
-   data set, which can be used as a starting point for domain specific 
-   rules.
+Description: Generate suggestions for validation rules 
+  from a reference data set, which can be used as a starting point for domain specific 
+   rules to be checked with package 'validate'.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
