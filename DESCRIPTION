@@ -1,6 +1,6 @@
 Package: validatesuggest
 Title: Generate Suggestions for Validation Rules
-Version: 0.3
+Version: 0.3.1
 Authors@R: 
     c(person(given = "Edwin",
            family = "de Jonge",
@@ -25,8 +25,8 @@ Imports:
     validate,
     whisker,
     rpart
-URL: https://github.com/edwindj/validatesuggest
-BugReports: https://github.com/edwindj/validatesuggest/issues
+URL: https://github.com/data-cleaning/validatesuggest
+BugReports: https://github.com/data-cleaning/validatesuggest/issues
 Depends: 
     R (>= 2.10)
 Suggests: 
