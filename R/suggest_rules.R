@@ -103,6 +103,4 @@ write_all_suggestions <- function( d
   if (conditional_rule){
     write_cond_rule(d, vars = vars, file = file)
   }
-
-
 }

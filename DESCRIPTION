@@ -1,6 +1,6 @@
 Package: validatesuggest
 Title: Generate Suggestions for Validation Rules
-Version: 0.2.0.9000
+Version: 0.3
 Authors@R: 
     c(person(given = "Edwin",
            family = "de Jonge",
@@ -20,7 +20,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Imports: 
     validate,
     whisker,
