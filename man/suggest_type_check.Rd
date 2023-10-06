@@ -16,6 +16,10 @@ suggest_type_check(d, vars = names(d))
 
 \item{file}{file to which the checks will be written to.}
 }
+\value{
+\code{suggest_type_check} returns \code{\link[validate:validator]{validate::validator()}} object with the suggested rules.
+\code{write_type_check} write the rules to file and returns invisibly a named list of types for each variable.
+}
 \description{
 suggest type check
 }

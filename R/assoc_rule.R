@@ -91,6 +91,8 @@ write_cond_rule <- function(d, vars=names(d), file = stdout()){
 #' @importFrom utils combn
 #' @example example/conditional_rule.R
 #' @inheritParams suggest_type_check
+#' @returns `suggest_cond_rule` returns [validate::validator()] object with the suggested rules.
+#' `write_cond_rule` returns invisibly a named list of ranges for each variable.
 suggest_cond_rule <- function(d, vars = names(d)){
   tf <- tempfile()
   pairs <- write_cond_rule(d, vars = vars, file = tf)

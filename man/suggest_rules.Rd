@@ -69,6 +69,10 @@ write_all_suggestions(
 
 \item{file}{file to which the checks will be written to.}
 }
+\value{
+returns \code{\link[validate:validator]{validate::validator()}} object with the suggested rules.
+\code{write_all_suggestions} write the rules to file and returns invisibly a named list of ranges for each variable.
+}
 \description{
 Suggests rules using the various suggestion checks.
 Use the more specific \code{suggest} functions for more control.

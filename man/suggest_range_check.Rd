@@ -20,6 +20,10 @@ suggest_range_check(d, vars = names(d), min = TRUE, max = FALSE)
 
 \item{file}{file to which the checks will be written to.}
 }
+\value{
+\code{suggest_range_check} returns \code{\link[validate:validator]{validate::validator()}} object with the suggested rules.
+\code{write_range_check} write the rules to file and returns invisibly a named list of ranges for each variable.
+}
 \description{
 Suggest a range check
 }

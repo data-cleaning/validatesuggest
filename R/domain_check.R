@@ -55,6 +55,8 @@ write_domain_check <- function(d, vars=names(d), only_positive=TRUE, file=stdout
 #' @inheritParams suggest_type_check
 #' @param only_positive if `TRUE` only numerical values for positive values are included
 #' @example example/range_check.R
+#' @returns `suggest_domain_check` returns [validate::validator()] object with the suggested rules.
+#' `write_domain_check` returns invisibly a named list of checks for each variable.
 suggest_domain_check <- function(d, vars = names(d), only_positive=TRUE){
   tf <- tempfile()
   vars <- write_domain_check(d, vars, file = tf)

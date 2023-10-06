@@ -30,6 +30,8 @@ write_pos_check <- function(d, vars=names(d), only_positive=TRUE, file=stdout())
 #' @inheritParams suggest_type_check
 #' @param only_positive if `TRUE` only numerical values for positive values are included
 #' @example example/range_check.R
+#' @returns `suggest_pos_check` returns [validate::validator()] object with the suggested rules.
+#' `write_pos_check` write the rules to file and returns invisibly a named list of checks for each variable.
 suggest_pos_check <- function(d, vars = names(d), only_positive=TRUE){
   tf <- tempfile()
   vars <- write_pos_check(d, vars, file = tf, only_positive = only_positive)

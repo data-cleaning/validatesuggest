@@ -16,6 +16,10 @@ suggest_na_check(d, vars = names(d))
 
 \item{file}{file to which the checks will be written to.}
 }
+\value{
+\code{suggest_na_check} returns \code{\link[validate:validator]{validate::validator()}} object with the suggested rules.
+\code{write_na_check} write the rules to file and returns invisibly a named list of ranges for each variable.
+}
 \description{
 Suggest a check for completeness.
 }

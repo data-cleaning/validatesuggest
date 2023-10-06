@@ -71,6 +71,8 @@ write_range_check <- function(d, vars=names(d), min=TRUE, max=FALSE, file=stdout
 #' @example example/range_check.R
 #' @param min `TRUE` or `FALSE`, should the minimum value be checked?
 #' @param max `TRUE` or `FALSE`, should the maximum value be checked?
+#' @returns `suggest_range_check` returns [validate::validator()] object with the suggested rules.
+#' `write_range_check` write the rules to file and returns invisibly a named list of ranges for each variable.
 suggest_range_check <- function(d, vars = names(d), min=TRUE, max=FALSE){
   tf <- tempfile()
   vars <- write_range_check(d, vars, min=min, max=max, file = tf)

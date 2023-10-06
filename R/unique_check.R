@@ -31,6 +31,8 @@ write_unique_check <- function(d, vars=names(d), file=stdout(), fraction=0.95){
 #' @inheritParams suggest_type_check
 #' @param fraction if values in a column > `fraction` unique,
 #' the check will be generated.
+#' @returns `suggest_unique_check` returns [validate::validator()] object with the suggested rules.
+#' `write_unique_check` write the rules to file and returns invisibly a named list of checks for each variable.
 suggest_unique_check <- function(d, vars = names(d), fraction=0.95){
   tf <- tempfile()
   vars <- write_unique_check(d, vars, fraction=0.95, file = tf)

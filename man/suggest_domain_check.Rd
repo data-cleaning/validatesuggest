@@ -18,6 +18,10 @@ suggest_domain_check(d, vars = names(d), only_positive = TRUE)
 
 \item{file}{file to which the checks will be written to.}
 }
+\value{
+\code{suggest_domain_check} returns \code{\link[validate:validator]{validate::validator()}} object with the suggested rules.
+\code{write_domain_check} returns invisibly a named list of checks for each variable.
+}
 \description{
 Suggest a range check
 }

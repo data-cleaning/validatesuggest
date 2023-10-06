@@ -19,6 +19,10 @@ suggest_unique_check(d, vars = names(d), fraction = 0.95)
 \item{fraction}{if values in a column > \code{fraction} unique,
 the check will be generated.}
 }
+\value{
+\code{suggest_unique_check} returns \code{\link[validate:validator]{validate::validator()}} object with the suggested rules.
+\code{write_unique_check} write the rules to file and returns invisibly a named list of checks for each variable.
+}
 \description{
 Suggest range checks
 }

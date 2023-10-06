@@ -18,6 +18,10 @@ suggest_pos_check(d, vars = names(d), only_positive = TRUE)
 
 \item{file}{file to which the checks will be written to.}
 }
+\value{
+\code{suggest_pos_check} returns \code{\link[validate:validator]{validate::validator()}} object with the suggested rules.
+\code{write_pos_check} write the rules to file and returns invisibly a named list of checks for each variable.
+}
 \description{
 Suggest a range check
 }

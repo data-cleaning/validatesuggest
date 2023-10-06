@@ -30,6 +30,8 @@ write_na_check <- function(d, vars=names(d), file=stdout()){
 #' @export
 #' @example example/na_check.R
 #' @inheritParams suggest_type_check
+#' @returns `suggest_na_check` returns [validate::validator()] object with the suggested rules.
+#' `write_na_check` write the rules to file and returns invisibly a named list of ranges for each variable.
 suggest_na_check <- function(d, vars = names(d)){
   tf <- tempfile()
   vars <- write_na_check(d, vars = vars, file = tf)

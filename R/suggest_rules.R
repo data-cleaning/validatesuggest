@@ -12,6 +12,8 @@
 #' @param unique_check if `TRUE` include unique_check
 #' @param conditional_rule if `TRUE` include cond_rule
 #' @export
+#' @returns returns [validate::validator()] object with the suggested rules.
+#' `write_all_suggestions` write the rules to file and returns invisibly a named list of ranges for each variable.
 suggest_rules <- function( d
                          , vars = names(d)
                          , domain_check = TRUE

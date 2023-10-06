@@ -19,8 +19,8 @@ adjusted by domain experts.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/edwindj/validatesuggest}
-  \item Report bugs at \url{https://github.com/edwindj/validatesuggest/issues}
+  \item \url{https://github.com/data-cleaning/validatesuggest}
+  \item Report bugs at \url{https://github.com/data-cleaning/validatesuggest/issues}
 }
 
 }

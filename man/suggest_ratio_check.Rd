@@ -26,6 +26,10 @@ suggest_ratio_check(d, vars = names(d), lin_cor = 0.95, digits = 2)
 
 \item{digits}{number of digits for rounding}
 }
+\value{
+\code{suggest_ratio_check} returns \code{\link[validate:validator]{validate::validator()}} object with the suggested rules.
+\code{write_ratio_check} write the rules to file and returns invisibly a named list of check for each variable.
+}
 \description{
 Suggest ratio checks
 }

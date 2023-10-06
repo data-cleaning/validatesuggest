@@ -49,6 +49,8 @@ ratio_check <- function(d, var1, var2, digits = 2){
 #' @inheritParams suggest_type_check
 #' @param lin_cor threshold for abs correlation to be included (details)
 #' @param digits number of digits for rounding
+#' @returns `suggest_ratio_check` returns [validate::validator()] object with the suggested rules.
+#' `write_ratio_check` write the rules to file and returns invisibly a named list of check for each variable.
 suggest_ratio_check <- function(d, vars = names(d), lin_cor=0.95, digits=2){
   tf <- tempfile()
   pairs <- write_ratio_check(d, vars, lin_cor = lin_cor, file = tf, digits = digits)
